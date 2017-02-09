@@ -6,6 +6,7 @@ title uglify tool
 SET JSFOLDER=%cd%\test
 ::cd /d %JSFOLDER%
 echo    HELLO   Passenger   
+
 echo    working directory %JSFOLDER%
 echo ******************************
 
@@ -25,6 +26,7 @@ echo %time% %date% >> log.txt
 for /r %JSFOLDER% %%a in (*.js) do (
    echo uglifying %%~na.js
    echo uglifyed %%~fa ... >>log.txt
+   ::%%~fa -cmo "%%~dpna".min.js 作为参数传入下个文件
    call  %~dp0/nodejs/uglifyjs %%~fa -cmo "%%~dpna".min.js
 	
 )
