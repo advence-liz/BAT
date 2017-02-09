@@ -29,15 +29,15 @@ for window bat
        for /f "tokens=15" %%i in ('ipconfig ^| find /i "ip address"') do set ip=%%i
        echo %ip% (这时的 %ip% 就是自己的IP地址)
 
-  - 14. 修改文件的更新日期
+  - 14.修改文件的更新日期
         copy 文件名+,,>nul  (修改为当前时间，如果要修改为指定时间，先修改系统时间，再改回系统时间)
-  - 15. 修改文件的后缀名
+  - 15.修改文件的后缀名
         ren C:\test\*.jpg *.JPG
 	for /r %%c in (*.jpg) do (ren %%c *.JPG)  :: 修改当前目录下的所有文件的后缀名，包括子目录的
-  - 16. 修改文件的文件名
+  - 16.修改文件的文件名
         rename test.jpg test2.JPG
         rename *.jpg *.888.JPG
-  - 17. 查看DNS、IP、Mac等
+  - 17.查看DNS、IP、Mac等
         1) Win98： winipcfg
         2) Win2000以上： Ipconfig /all
         3) NSLOOKUP
