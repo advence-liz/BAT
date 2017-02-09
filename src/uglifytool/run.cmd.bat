@@ -1,32 +1,36 @@
 @echo off
 color 2
-
+title uglify tool
 
 :: "set the directory where to find js files"
-SET JSFOLDER=.\test
-chdir /d %JSFOLDER%
+SET JSFOLDER=%cd%\test
+::cd /d %JSFOLDER%
 echo    HELLO   Passenger   
-echo    working directory %cd%
+echo    working directory %JSFOLDER%
 echo ******************************
 
-echo    setp 1 delect *.min.js
+echo    setp 1 delect *.min.js 
 echo -------------------------------
 :: delect js which has been uglifyed
-for /r . %%b in (*.min.js) do (
+for /r %JSFOLDER% %%b in (*.min.js) do (
 	echo delect %%~nb.js
-	del %%~nb.js
-  )
+	del %%~fb
+)
 echo -------------------------------
 
-echo    step 2 uglifying js files
+echo    step 2 uglifying js files 
 echo +++++++++++++++++++++++++++++++
-for /r . %%a in (*.js) do (
-   echo uglifying %%~a ...
+echo %time% %date% >> log.txt 
+
+for /r %JSFOLDER% %%a in (*.js) do (
+   echo uglifying %%~na.js
+   echo uglifyed %%~fa ... >>log.txt
    call  %~dp0/nodejs/uglifyjs %%~fa -cmo "%%~dpna".min.js
 	
 )
 echo +++++++++++++++++++++++++++++++
 
 echo    ALL DONE!!!
+whoami >>log.txt
 
 pause & exit
