@@ -7,7 +7,10 @@ for window bat
 - [Api](http://blog.csdn.net/junmuzi/article/details/12239303)
 - [百度百科](http://baike.baidu.com/subview/283786/283786.htm)
 - [%~dp0](http://blog.csdn.net/lightyearwp/article/details/2778677)
-
+- [cmd](http://www.jb51.net/article/11287.htm)
+## problem
+- 文件名不用跟命令名一样不然会执行文件而不是命令囧
+-  start cmd /k echo ee 打开新窗口执行命令并且窗口不关
 ## guide
   - 1. 调用其他程序时，对文件的大小写不敏感，文件后缀也可忽略
        如：start LeapFTP.exe  与 start leapftp 效果一样，都是运行“LeapFTP.exe”文件
@@ -53,3 +56,4 @@ for window bat
           mymovie 共享成功。 同时限制链接用户数为3人。
   - 20.打开某网站
           start iexplore.exe http://www.baidu.com
+          使用默认浏览器 start http://www.baidu.com
