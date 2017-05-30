@@ -8,9 +8,14 @@ for window bat
 - [百度百科](http://baike.baidu.com/subview/283786/283786.htm)
 - [%~dp0](http://blog.csdn.net/lightyearwp/article/details/2778677)
 - [cmd](http://www.jb51.net/article/11287.htm)
+- [cmd.exe](https://ss64.com/nt/cmd.html)
 ## problem
 - 文件名不用跟命令名一样不然会执行文件而不是命令囧
 -  start cmd /k echo ee 打开新窗口执行命令并且窗口不关
+- cmd.exe /c gulp -b "D:\Git\prometheus3\prometheus3\prometheus3" --color --gulpfile "D:\Git\prometheus3\prometheus3\prometheus3\Gulpfile.js" default
+- explorer %windir%   打开模块目录
+-  @echo 10.1.87.74          demo.api.com >>C:\Windows\System32\drivers\etc\hosts 
+  start http://demo.api.com/demo/widget.html
 ## guide
   - 1. 调用其他程序时，对文件的大小写不敏感，文件后缀也可忽略
        如：start LeapFTP.exe  与 start leapftp 效果一样，都是运行“LeapFTP.exe”文件
