@@ -1,0 +1,4 @@
+server\VCControl\VCControlWeb\Control.Web.Html
+server\VCControl\VCManager\Item\Item.Html
+server\VCControl\VCControlService\ControlPanel.Html
+server\VCControl\VCManager\ContentManager\ContentManager.Html

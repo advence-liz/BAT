@@ -16,6 +16,22 @@ for window bat
 - explorer %windir%   打开模块目录
 -  @echo 10.1.87.74          demo.api.com >>C:\Windows\System32\drivers\etc\hosts 
   start http://demo.api.com/demo/widget.html
+```
+D:\lizgit\BAT\src\findstr>set str= ffff
+
+D:\lizgit\BAT\src\findstr>str
+'str' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\lizgit\BAT\src\findstr>echo str
+str
+
+D:\lizgit\BAT\src\findstr>echo "%str%"
+" ffff"
+
+D:\lizgit\BAT\src\findstr>
+```
+
 ## guide
   - 1. 调用其他程序时，对文件的大小写不敏感，文件后缀也可忽略
        如：start LeapFTP.exe  与 start leapftp 效果一样，都是运行“LeapFTP.exe”文件
