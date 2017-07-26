@@ -7,4 +7,4 @@
 - 将node_build.zip 解压
 - 双击rebuild.bat
 ## 个性化配置
- 通过修改build  文件夹对应项目下的 pack.js 和 pack.less
+ 通过修改build  文件夹对应项目下的 pack.js 和 pack.lessddd
