@@ -9,6 +9,7 @@ for window bat
 - [%~dp0](http://blog.csdn.net/lightyearwp/article/details/2778677)
 - [cmd](http://www.jb51.net/article/11287.htm)
 - [cmd.exe](https://ss64.com/nt/cmd.html)
+- [bat&cmd](http://blog.csdn.net/bingjie1217/article/details/12947327)
 ## problem
 - 文件名不用跟命令名一样不然会执行文件而不是命令囧
 -  start cmd /k echo ee 打开新窗口执行命令并且窗口不关
@@ -31,7 +32,7 @@ D:\lizgit\BAT\src\findstr>echo "%str%"
 
 D:\lizgit\BAT\src\findstr>
 ```
-
+- [call&start](http://www.bathome.net/thread-3162-1-1.html) call 主要调用其它批处理文件并且可以传参数 start 调用其它exe 或者调用对应文件格式的默认启动程序
 ## guide
   - 1. 调用其他程序时，对文件的大小写不敏感，文件后缀也可忽略
        如：start LeapFTP.exe  与 start leapftp 效果一样，都是运行“LeapFTP.exe”文件
@@ -78,3 +79,37 @@ D:\lizgit\BAT\src\findstr>
   - 20.打开某网站
           start iexplore.exe http://www.baidu.com
           使用默认浏览器 start http://www.baidu.com
+##
+```
+
+main.bat
+@echo off
+set a=1
+pause
+echo call child.bat
+call child.bat
+echo end call
+pause
+echo %b%
+pause
+复制代码
+
+child.bat
+ @echo off
+echo %a%
+set b=20
+pause
+复制代码
+
+
+注意，这个实验中，main.bat定义了变量a为1，在child.bat中定义了变量b为1
+main.bat首先将call child.bat，然后child.bat将echo %a%，现在能正常显示1。call完之后，main.bat将echo %b%，也能正常显示20
+
+如果将call改为start，待child.bat执行完再关闭之后，main.bat继续echo %b%，将无法显示变量b的值
+
+call的时候，他们拥有同一个壳cmd.exe，在同一个进程当中，所以他们的变量是互通的
+
+start的时候，他们拥有两个壳cmd.exe，但在不同的进程当中，而由于这是他们的壳都是cmd.exe，所以child.bat可以看成是main.bat的子进程，子进程可以读取父进程中的变量，但不能赋予父进程变量的值。而当start的程序不同的壳的时候，他们就不是父子进程关系。
+
+我是这样理解的，有不同意见以砖拍之。。。
+```
