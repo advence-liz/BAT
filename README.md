@@ -10,6 +10,7 @@ for window bat
 - [cmd](http://www.jb51.net/article/11287.htm)
 - [cmd.exe](https://ss64.com/nt/cmd.html)
 - [bat&cmd](http://blog.csdn.net/bingjie1217/article/details/12947327)
+- [管道命令重定向](http://blog.sina.com.cn/s/blog_69b9434b0101cya5.html)
 ## problem
 - 文件名不用跟命令名一样不然会执行文件而不是命令囧
 -  start cmd /k echo ee 打开新窗口执行命令并且窗口不关
