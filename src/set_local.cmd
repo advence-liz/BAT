@@ -1,0 +1,12 @@
+@ECHO OFF 
+SET PATH
+PAUSE 
+SETLOCAL 
+REM 貌似这招现在不行了实际上系统的环境变量并没有改变呢
+SET PATH=%PATH%;D:\lizgit\BAT\ 
+SET PATH 
+
+baidu
+PAUSE 
+ENDLOCAL 
+SET PATH 
